@@ -1,0 +1,24 @@
+{
+  "name": "mean-poc",
+  "version": "1.0.0",
+  "description": "MEAN stack with angular 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gfoo/mean-poc.git"
+  },
+  "author": "gfoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gfoo/mean-poc/issues"
+  },
+  "homepage": "https://github.com/gfoo/mean-poc#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.2"
+  }
+}
