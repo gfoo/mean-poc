@@ -5,7 +5,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class BlogService {
 
-  domain = "http://localhost:8080";
+  domain = "";
   authToken;
   headers;
 
