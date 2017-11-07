@@ -40,21 +40,21 @@ export class BlogService {
 
   getSingleBlog(id) {
     this.createAuthenticationHeaders(); // Create headers
-    return this.http.get(this.domain + '/blogs/singleBlog/' + id,
+    return this.http.get(this.domain + '/blogs/singleBlog' + id,
       { headers: this.headers }
     );
   }
 
   editBlog(blog) {
     this.createAuthenticationHeaders(); // Create headers
-    return this.http.put(this.domain + '/blogs/updateBlog/', blog,
+    return this.http.put(this.domain + '/blogs/updateBlog', blog,
       { headers: this.headers }
     );
   }
 
   deleteBlog(id) {
     this.createAuthenticationHeaders(); // Create headers
-    return this.http.delete(this.domain + '/blogs/deleteBlog/' + id,
+    return this.http.delete(this.domain + '/blogs/deleteBlog' + id,
       { headers: this.headers }
     );
   }
@@ -62,7 +62,7 @@ export class BlogService {
   // Function to like a blog post
   likeBlog(id) {
     const blogData = { id: id };
-    return this.http.put(this.domain + '/blogs/likeBlog/', blogData,
+    return this.http.put(this.domain + '/blogs/likeBlog', blogData,
       { headers: this.headers }
     );
   }
@@ -70,8 +70,17 @@ export class BlogService {
   // Function to dislike a blog post
   dislikeBlog(id) {
     const blogData = { id: id };
-    return this.http.put(this.domain + '/blogs/dislikeBlog/', blogData,
+    return this.http.put(this.domain + '/blogs/dislikeBlog', blogData,
       { headers: this.headers }
     );
+  }
+
+  postComment(id, comment) {
+    this.createAuthenticationHeaders();
+    const blogData = {
+      id: id,
+      comment: comment
+    }
+    return this.http.post(this.domain + '/blogs/comment', blogData, { headers: this.headers });
   }
 }
