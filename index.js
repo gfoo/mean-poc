@@ -1,3 +1,4 @@
+const env = require('./env');
 const express = require('express');
 const app = express();
 const router = express.Router();
@@ -8,7 +9,7 @@ const authentication = require('./routes/authentication')(router);
 const blogs = require('./routes/blogs')(router);
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8080;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.uri, {
@@ -40,5 +41,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Listening on port ' + port);
+  console.log('Listening on port ' + port + ' in ' + process.env.NODE_ENV + ' mode');
 });

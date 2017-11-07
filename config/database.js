@@ -1,11 +1,8 @@
 const crypto = require('crypto').randomBytes(256).toString('hex');
 
+// Export config object
 module.exports = {
-  // dev
-  //  uri: 'mongodb://localhost:27017/mean-poc', 
-  // db: 'mean-poc'
-  // prod
-  uri: 'mongodb://user:user@ds149855.mlab.com:49855/mean-poc',
-  db: 'mean-poc',
-  secret: crypto,
+  uri: process.env.databaseUri, // Databse URI and database name
+  secret: crypto, // Cryto-created secret
+  db: process.env.databaseName // Database name
 }

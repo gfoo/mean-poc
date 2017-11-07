@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tokenNotExpired } from 'angular2-jwt';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
 
-  // dev
-  // domain = "http://localhost:8080";
-  // prod
-  domain = "";
+  domain = environment.domain;
   authToken;
   user;
   headers;
